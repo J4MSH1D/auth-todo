@@ -1,0 +1,17 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@mixin flex-column-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+@button {
+    padding: 10px 30px;
+    border-radius:5px;
+    border:none;
+}
