@@ -9,9 +9,7 @@ const store = createStore({
     };
   },
   mutations: {
-    increment(state, payload) {
-      state.user = payload;
-    },
+    increment: (state, payload) => (state.user = payload),
   },
   actions: {
     async getAllUsers() {
