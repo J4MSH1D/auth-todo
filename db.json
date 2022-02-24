@@ -1,6 +1,6 @@
 {
   "users": {
-    "id": 1,
+    "id": "admin@gmail.com",
     "email": "admin@gmail.com",
     "admin": true
   }

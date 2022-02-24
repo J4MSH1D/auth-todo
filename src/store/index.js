@@ -23,6 +23,4 @@ const store = createStore({
   },
 });
 
-store.dispatch("getAllUsers");
-
 export default store;
