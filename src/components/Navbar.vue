@@ -3,7 +3,7 @@
     <div class="navbar__Logo">Navbar</div>
     <div class="navbar__Links">
       <router-link to="/">Home</router-link>
-      <router-link to="/">Profile</router-link>
+      <router-link to="/admin">Admin</router-link>
       <button @click="redirectToAuth">Login/Register</button>
     </div>
   </div>
