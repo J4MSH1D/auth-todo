@@ -3,18 +3,12 @@
     <div class="admin__Fileds__Title">Admin</div>
     <div class="admin__Fileds__Title__label">
       <div>
-        <label for="title">Title</label>
-      </div>
-      <div>
-        <input type="text" id="title" v-model="title" />
+        <input type="text" id="title" v-model="title" placeholder="Title" />
       </div>
     </div>
     <div class="admin__Fileds__Title__label">
       <div>
-        <label for="text">Text</label>
-      </div>
-      <div>
-        <textarea id="title" cols="50" rows="1" v-model="text"></textarea>
+        <textarea id="title" cols="50" rows="5" v-model="text" placeholder="Text"></textarea>
       </div>
     </div>
     <div class="error" v-if="error">Your data is incorrect</div>
