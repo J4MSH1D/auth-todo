@@ -2,8 +2,6 @@ import { createStore } from "vuex";
 import axios from "axios";
 import { todos } from "./Todos/todos.js"
 
-axios.defaults.baseURL = "http://localhost:3333/";
-
 const store = createStore({
   state() {
     return {
@@ -27,5 +25,7 @@ const store = createStore({
     todos: todos
   },
 });
+
+store.dispatch("todos/getTodos")
 
 export default store;

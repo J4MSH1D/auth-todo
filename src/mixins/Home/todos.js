@@ -1,20 +1,27 @@
 export const todos = {
-    data(){
-        return {
-            empty: true
-        }
+  data() {
+    return {
+      empty: true,
+    };
+  },
+  created(){
+    this.todoChecker()
+  },
+  updated() {
+    this.todoChecker()
+  },
+  methods: {
+    todoChecker() {
+      if (Boolean(this.todos)) {
+          if(this.todos.length > 0) this.empty = false;
+      } else {
+        this.empty = true;
+      }
     },
-    async created() {
-        await this.$store.dispatch("todos/getTodos")
-        if(this.$store.state.todos.todos.length > 0) {
-            this.empty = false
-        } else {
-            this.empty = true
-        }
+  },
+  computed: {
+    todos() {
+      return this.$store.state.todos.todos;
     },
-    computed: {
-        todos() {
-            return this.$store.state.todos.todos
-        }
-    }
-}
+  },
+};

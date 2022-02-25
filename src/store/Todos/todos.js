@@ -12,7 +12,7 @@ export const todos = {
   actions: {
     async getTodos(context) {
       try {
-        const res = await axios.get("todos");
+        const res = await axios.get("http://localhost:3333/todos");
         context.commit("setTodos", res.data);
       } catch (e) {
         console.log(e.message);

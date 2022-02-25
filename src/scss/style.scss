@@ -35,7 +35,8 @@ a {
   .navbar__Links {
     @include flex-end;
     width: 70%;
-    a, button {
+    a,
+    button {
       font-size: 16px;
       cursor: pointer;
       color: #fff;
@@ -58,34 +59,34 @@ a {
       margin-bottom: 20px;
     }
     .login__Title {
-        margin: 15px 0;
-        font-size: 30px;
-        font-weight: 500;
+      margin: 15px 0;
+      font-size: 30px;
+      font-weight: 500;
     }
   }
   .login__Fields {
-      width: 100%;
-      padding: 15px 0;
-      margin: 10px 0;
+    width: 100%;
+    padding: 15px 0;
+    margin: 10px 0;
+    @include flex-column-center;
+    .login__Fields__Title {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    & > div {
+      margin: 20px 0;
+      input {
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #000;
+      }
       @include flex-column-center;
-      .login__Fields__Title {
-          margin-bottom: 10px;
-          font-size: 20px;
-      }
-      &> div {
-          margin: 20px 0;
-        input {
-            border: none;
-            outline: none;
-            border-bottom: 2px solid #000;
-        }
-        @include flex-column-center;
-      }
-      .login__Fields__warrning {
-          margin: 10px 0 0 0;
-          color: red;
-      }
+    }
   }
+}
+.error {
+  margin: 10px 0;
+  color: red;
 }
 .login__Fields__Redirect {
   cursor: pointer;
@@ -100,7 +101,27 @@ a {
   .admin__Fields {
     width: 400px;
     padding: 10px 0;
-    border:3px dashed #000;
+    border: 3px dashed #000;
+    button {
+      @include button;
+      margin-bottom: 20px;
+    }
+    @include flex-column-center;
+    .admin__Fileds__Title {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .admin__Fileds__Title__label {
+      margin: 20px 0;
+      @include flex-column-center;
+      font-size: 20px;
+      textarea {
+        @include textarea;
+      }
+      input {
+        @include input;
+      }
+    }
   }
   @include flex-center;
 }
@@ -113,12 +134,19 @@ a {
     font-size: 22pt;
     margin-bottom: 20px;
   }
-  .list, .home__EmptyTodos {
+  .home__EmptyTodos {
+    border: none;
+    text-align: center;
+    font-size: 15pt;
+  }
+}
+.list,
+  .home__EmptyTodos {
     margin: 10px 0;
     width: 80%;
     padding: 10px 15px;
     border: 2px dashed #000;
-    .list__Title { 
+    .list__Title {
       margin-bottom: 15px;
       font-size: 20px;
       font-weight: 700;
@@ -133,9 +161,3 @@ a {
       margin-bottom: 10px;
     }
   }
-  .home__EmptyTodos {
-    border: none;
-    text-align: center;
-    font-size: 15pt;
-  }
-}
