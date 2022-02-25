@@ -1,5 +1,7 @@
 import { createStore } from "vuex";
 import axios from "axios";
+import { todos } from "./Todos/todos.js"
+
 axios.defaults.baseURL = "http://localhost:3333/";
 
 const store = createStore({
@@ -20,6 +22,9 @@ const store = createStore({
         console.log(e.message);
       }
     },
+  },
+  modules: {
+    todos: todos
   },
 });
 
