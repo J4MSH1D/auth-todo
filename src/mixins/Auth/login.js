@@ -13,7 +13,6 @@ export const loginForm = {
       } else if(this.email.length >= 5 && this.password.length >= 8) {
         this.error = false
         this.email = this.password = ""
-        console.log("Correct");
       }
     }
   }

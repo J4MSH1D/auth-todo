@@ -2,6 +2,12 @@ import { createStore } from "vuex";
 import axios from "axios";
 import { todos } from "./Todos/todos.js";
 
+let email = "test@gmail.com"
+let encoded = btoa(email)
+let decoded = atob(encoded)
+console.log(encoded, decoded);
+
+
 const store = createStore({
   state() {
     return {

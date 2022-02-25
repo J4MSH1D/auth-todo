@@ -1,4 +1,4 @@
-import { post } from "../../composables/Admin/post.js";
+import { post } from "../../composables/post.js";
 import { TODOS } from "../../composables/Links/links.js";
 export const admin = {
   data() {
