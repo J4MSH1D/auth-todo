@@ -97,4 +97,36 @@ a {
 .admin {
   width: 100vw;
   height: 100vh;
+  .admin__Fields {
+    width: 400px;
+    padding: 10px 0;
+    border:3px dashed #000;
+  }
+  @include flex-center;
+}
+.home {
+  margin-top: 100px;
+  width: 100vw;
+  @include flex-column-center;
+  .home__Title {
+    width: 80%;
+    font-size: 22pt;
+    margin-bottom: 20px;
+  }
+  .list, .home__EmptyTodos {
+    margin: 10px 0;
+    width: 80%;
+    padding: 10px 15px;
+    border: 2px dashed #000;
+    .list__Title { 
+      margin-bottom: 15px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+  .home__EmptyTodos {
+    border: none;
+    text-align: center;
+    font-size: 15pt;
+  }
 }

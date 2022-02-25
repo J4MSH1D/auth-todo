@@ -1,14 +1,16 @@
 <template>
   <div class="admin">
-      
+      <AdminField />
   </div>
 </template>
 
 <script>
-import { admin } from "../mixins/Admin/admin"
+import AdminField from "../components/AdminFileds.vue"
 export default {
     name: 'Admin',
-    mixins: [admin]
+    components: {
+        AdminField
+    }
 }
 </script>
 

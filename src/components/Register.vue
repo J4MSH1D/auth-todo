@@ -12,7 +12,7 @@
       </div>
       <div>
         <div class="login__Fields__Title">
-          <label for="email" >Password</label>
+          <label for="password" >Password</label>
         </div>
         <div>
           <input type="password" v-model="password" id="password"/>
