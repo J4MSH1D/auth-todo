@@ -1,9 +1,8 @@
 <template>
   <div class="list">
     <div class="list__Title">{{ title }}</div>
-    <div class="list__Text">
-      {{ text }}
-    </div>
+    <div class="list__Text">{{ text }}</div>
+    <div><button>Learn More</button></div>
   </div>
 </template>
 

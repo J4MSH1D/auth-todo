@@ -123,6 +123,15 @@ a {
       font-size: 20px;
       font-weight: 700;
     }
+    button {
+      @include button;
+    }
+    .list__Text {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 10px;
+    }
   }
   .home__EmptyTodos {
     border: none;
