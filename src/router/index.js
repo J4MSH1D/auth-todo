@@ -31,4 +31,12 @@ const router = createRouter({
   },
 });
 
+
+router.beforeEach((to) => {
+  if(to.name === "Todo") {
+    return { name: "Auth"} 
+  }
+})
+
+
 export default router;

@@ -23,14 +23,14 @@
           <label for="password1">Confirm Password</label>
         </div>
         <div>
-          <input type="password" v-model="password" id="password1" />
+          <input type="password" v-model="cPassword" id="password1" />
         </div>
       </div>
       <div class="error" v-if="error">Your data is invalid</div>
     </div>
     <div class="login__Fields__Redirect" @click="changeForm">Back to Login</div>
     <div>
-      <button>Register</button>
+      <button @click="register">Register</button>
     </div>
   </div>
 </template>

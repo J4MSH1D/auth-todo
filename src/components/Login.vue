@@ -7,7 +7,7 @@
           <label for="email">Email</label>
         </div>
         <div>
-          <input type="email" v-model="email" id="email" />
+          <input type="email" v-model="email" id="email"/>
         </div>
       </div>
       <div>
@@ -15,7 +15,7 @@
           <label for="password">Password</label>
         </div>
         <div>
-          <input type="password" v-model="password" id="password" />
+          <input type="password" v-model="password" id="password"/>
         </div>
       </div>
       <div class="error" v-if="error">Your data is invalid</div>
@@ -24,7 +24,7 @@
       Back to Register
     </div>
     <div>
-      <button>Login</button>
+      <button @click="login">Login</button>
     </div>
   </div>
 </template>
