@@ -3,6 +3,7 @@ export const loginForm = {
         return { 
             email: "",
             password: "",
+            error: false
         }
     }
 }

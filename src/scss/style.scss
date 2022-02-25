@@ -35,7 +35,7 @@ a {
   .navbar__Links {
     @include flex-end;
     width: 70%;
-    a {
+    a, button {
       font-size: 16px;
       cursor: pointer;
       color: #fff;
@@ -53,7 +53,6 @@ a {
     @include flex-column-center-start;
     width: 350px;
     border: 3px dashed #000;
-    border-radius: 10px;
     button {
       @include button;
       margin-bottom: 20px;
@@ -87,4 +86,11 @@ a {
           color: red;
       }
   }
+}
+.login__Fields__Redirect {
+  cursor: pointer;
+  width: 100%;
+  color: #555;
+  margin-bottom: 15px;
+  text-align: center;
 }
