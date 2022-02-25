@@ -16,6 +16,11 @@ const routes = [
     name: "Admin",
     component: () => import("../views/Admin.vue"),
   },
+  {
+    path: "/:id/:text/todo",
+    name: "Todo",
+    component: () => import("../views/Todo.vue"),
+  },
 ];
 
 const router = createRouter({
