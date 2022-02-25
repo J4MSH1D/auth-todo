@@ -141,23 +141,23 @@ a {
   }
 }
 .list,
-  .home__EmptyTodos {
-    margin: 10px 0;
-    width: 80%;
-    padding: 10px 15px;
-    border: 2px dashed #000;
-    .list__Title {
-      margin-bottom: 15px;
-      font-size: 20px;
-      font-weight: 700;
-    }
-    button {
-      @include button;
-    }
-    .list__Text {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      margin-bottom: 10px;
-    }
+.home__EmptyTodos {
+  margin: 10px 0;
+  width: 80%;
+  padding: 10px 15px;
+  border: 2px dashed #000;
+  .list__Title {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 700;
   }
+  button {
+    @include button;
+  }
+  .list__Text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+  }
+}

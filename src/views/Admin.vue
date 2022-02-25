@@ -1,19 +1,17 @@
 <template>
   <div class="admin">
-      <AdminField />
+    <AdminField />
   </div>
 </template>
 
 <script>
-import AdminField from "../components/AdminFileds.vue"
-export default {
-    name: 'Admin',
+  import AdminField from "../components/AdminFileds.vue";
+  export default {
+    name: "Admin",
     components: {
-        AdminField
-    }
-}
+      AdminField,
+    },
+  };
 </script>
 
-<style>
-
-</style>
+<style></style>

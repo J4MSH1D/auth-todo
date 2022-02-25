@@ -1,10 +1,10 @@
 export const registerForm = {
   data() {
     return {
-        email: "",
-        password: "",
-        cPassword: "",
-        error: false
+      email: "",
+      password: "",
+      cPassword: "",
+      error: false,
     };
-  }
+  },
 };

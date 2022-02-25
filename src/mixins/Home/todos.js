@@ -4,16 +4,16 @@ export const todos = {
       empty: true,
     };
   },
-  created(){
-    this.todoChecker()
+  created() {
+    this.todoChecker();
   },
   updated() {
-    this.todoChecker()
+    this.todoChecker();
   },
   methods: {
     todoChecker() {
       if (Boolean(this.todos)) {
-          if(this.todos.length > 0) this.empty = false;
+        if (this.todos.length > 0) this.empty = false;
       } else {
         this.empty = true;
       }

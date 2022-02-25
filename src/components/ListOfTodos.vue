@@ -10,9 +10,9 @@
   export default {
     name: "List Of Todos",
     props: {
-        title: String,
-        text: String
-    }
+      title: String,
+      text: String,
+    },
   };
 </script>
 

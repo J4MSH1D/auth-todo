@@ -7,8 +7,8 @@ export const formChanger = {
   },
   methods: {
     changeForms() {
-      this.loginForm = !this.loginForm
-      this.registerForm = !this.registerForm
+      this.loginForm = !this.loginForm;
+      this.registerForm = !this.registerForm;
     },
   },
 };

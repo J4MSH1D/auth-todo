@@ -8,14 +8,14 @@
 <script>
   import Login from "../components/Login.vue";
   import Register from "../components/Register.vue";
-  import { formChanger } from "../mixins/Auth/formChanger"
+  import { formChanger } from "../mixins/Auth/formChanger";
   export default {
     name: "Authorization",
     components: {
       Login,
       Register,
     },
-    mixins: [formChanger]
+    mixins: [formChanger],
   };
 </script>
 

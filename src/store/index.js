@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 import axios from "axios";
-import { todos } from "./Todos/todos.js"
+import { todos } from "./Todos/todos.js";
 
 const store = createStore({
   state() {
@@ -22,10 +22,10 @@ const store = createStore({
     },
   },
   modules: {
-    todos: todos
+    todos: todos,
   },
 });
 
-store.dispatch("todos/getTodos")
+store.dispatch("todos/getTodos");
 
 export default store;
