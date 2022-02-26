@@ -23,6 +23,7 @@ export const loginForm = {
             localStorage.setItem("jwt", encoded);
             await this.$store.dispatch(AUTH);
             this.email = this.password = "";
+            this.$router.push({name: "Home"})
           } else {
             this.error = true;
           }

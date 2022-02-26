@@ -7,11 +7,6 @@ import { USERS } from "../composables/Links/links";
 import { AUTH } from "../composables/Links/links"
 
 
-let email = "test@gmail.com";
-let encoded = btoa(email);
-let decoded = atob(encoded);
-console.log(encoded, decoded);
-
 const store = createStore({
   state() {
     return {

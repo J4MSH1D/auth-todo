@@ -36,13 +36,19 @@ a {
     @include flex-end;
     width: 70%;
     a,
-    button {
+    button,
+    div {
       font-size: 16px;
       cursor: pointer;
       color: #fff;
       margin-right: 20px;
       border: none;
       background-color: transparent;
+    }
+    .navbar__Links__Logout {
+      border: 2px solid #fff;
+      padding: 0 15px;
+      border-radius: 10px;
     }
   }
 }

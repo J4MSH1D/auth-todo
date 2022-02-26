@@ -5,19 +5,30 @@
       <router-link to="/">Home</router-link>
       <router-link to="/admin">Admin</router-link>
       <button @click="redirectToAuth">Login/Register</button>
+      <div>Hello,</div>
+      <button class="navbar__Links__Logout" @click="logout">Log out</button>
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "Navbar",
-    methods: {
-      redirectToAuth() {
-        this.$router.push({ name: "Auth" });
+  import { AUTH } from "../composables/Links/links"
+    export default {
+      name: "Navbar",
+      created(){
+        this.getUser()
       },
-    },
-  };
+      methods: {
+        async getUser() {
+          try {
+          await this.$store.dispatch(AUTH)
+        } catch (e) {
+          console.log(e.message);
+        }
+        }
+      },
+      
+    };
 </script>
 
 <style></style>

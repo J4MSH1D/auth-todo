@@ -7,6 +7,11 @@ export const auth = {
             user: null
         }
     },
+    getters: {
+        email(state) {
+            return state.user.email
+        }
+    },
     mutations: {
         setUser: (state, payload) => (state.user = payload)
     },
