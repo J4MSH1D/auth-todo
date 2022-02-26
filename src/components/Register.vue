@@ -37,13 +37,9 @@
 
 <script>
   import { registerForm } from "../mixins/Auth/register";
+  import { formChangerEmit } from "../mixins/Auth/formCangerEmit"
   export default {
     name: "Login",
-    mixins: [registerForm],
-    methods: {
-      changeForm() {
-        this.$emit("changForm");
-      },
-    },
+    mixins: [registerForm, formChangerEmit]
   };
 </script>

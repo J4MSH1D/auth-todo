@@ -1,5 +1,6 @@
-import { post } from "../../composables/post.js";
+import axios from "axios";
 import { TODOS } from "../../composables/Links/links.js";
+import { TODOS_V } from "../../composables/Links/links"
 export const admin = {
   data() {
     return {
@@ -18,7 +19,8 @@ export const admin = {
             title: this.title,
             text: this.text,
           };
-          await post(TODOS, data);
+          await axios.post(TODOS, data);
+          await this.$store.dispatch(TODOS_V)
           this.title = this.text = "";
         } catch (e) {
           console.log(e.message);

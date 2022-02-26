@@ -1,5 +1,6 @@
-import {  } from "../../composables/post.js";
+import axios from "axios"
 import { USERS } from "../../composables/Links/links";
+import { AUTH } from "../../composables/Links/links"
 export const registerForm = {
   data() {
     return {
@@ -11,25 +12,28 @@ export const registerForm = {
   },
   methods: {
     async register() {
-      if ( this.email.length < 5 || this.password.length < 5 || this.password !== this.cPassword ) {
-        this.error = true;
-      } else {
-       this.postNewUser()
-      }
-    },
-    async postNewUser(){
-      try {
-        let newUser = {
+      if(this.password === this.cPassword && this.email.length > 5 && this.password.length > 5) {
+        const newUser= {
           id: this.email,
           email: this.email,
           password: this.password,
-          admin: false,
+          admin: false
         }
-        const response = await post(USERS, newUser)
-        console.log(response.data);
-      } catch {
+        this.error = false
+        try {
+          await axios.post(USERS, newUser)
+          this.error = false
+          let encoded = btoa(this.email)
+          localStorage.setItem("jwt", encoded)
+          await this.$store.dispatch(AUTH)
+          this.email = this.password = this.cPassword = ""
+          this.$router.push({name: "Home"})
+        } catch{
+          this.error = true
+        }
+      } else {
         this.error = true
       }
-    }
+    },
   },
 };

@@ -4,7 +4,7 @@
       "id": "tested@gmail.com",
       "email": "tested@gmail.com",
       "password": "132465789",
-      "admin": false
+      "admin": true
     },
     {
       "id": "test@gmail.com",
@@ -13,14 +13,26 @@
       "admin": false
     },
     {
-      "id": "test2@gmail.com",
-      "email": "test2@gmail.com",
+      "id": "test50@gmail.com",
+      "email": "test50@gmail.com",
+      "password": "asdasdasd",
+      "admin": false
+    },
+    {
+      "id": "test5@gmail.com",
+      "email": "test5@gmail.com",
+      "password": "asdasdasd",
+      "admin": false
+    },
+    {
+      "id": "test55@gmail.com",
+      "email": "test55@gmail.com",
       "password": "123123123",
       "admin": false
     },
     {
-      "id": "123123123",
-      "email": "123123123",
+      "id": "test2@gmail.com",
+      "email": "test2@gmail.com",
       "password": "123123123",
       "admin": false
     }
@@ -50,11 +62,6 @@
       "title": "Title 5",
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem adexpedita dolor, nisi et cupiditate ex corporis inventore sunt quos natus beatae amet, officiis, qui odio minus adipisci quo ducimus ipsa quasi quas necessitatibus? Consequuntur, excepturi. Tenetur delectus dolorum, quasi soluta atque, sit dolore, quisquam ex alias perferendis magni laudantium aut ea veritatis accusamus amet?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem adexpedita dolor, nisi et cupiditate ex corporis inventore sunt quos natus beatae amet, officiis, qui odio minus adipisci quo ducimus ipsa quasi quas necessitatibus? Consequuntur, excepturi. Tenetur delectus dolorum, quasi soluta atque, sit dolore, quisquam ex alias perferendis magni laudantium aut ea veritatis accusamus amet? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem adexpedita dolor, nisi et cupiditate ex corporis inventore sunt quos natus beatae amet, officiis, qui odio minus adipisci quo ducimus ipsa quasi quas necessitatibus? Consequuntur, excepturi. Tenetur delectus dolorum, quasi soluta atque, sit dolore, quisquam ex alias perferendis magni laudantium aut ea veritatis accusamus amet? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem adexpedita dolor, nisi et cupiditate ex corporis inventore sunt quos natus beatae amet, officiis, qui odio minus adipisci quo ducimus ipsa quasi quas necessitatibus? Consequuntur, excepturi. Tenetur delectus dolorum, quasi soluta atque, sit dolore, quisquam ex alias perferendis magni laudantium aut ea veritatis accusamus amet",
       "id": 5
-    },
-    {
-      "title": "asdasd",
-      "text": "asdadasdasd",
-      "id": 6
     }
   ]
 }

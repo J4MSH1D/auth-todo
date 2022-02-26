@@ -1,26 +1,31 @@
 import { createStore } from "vuex";
 import axios from "axios";
 import { todos } from "./Todos/todos.js";
+import { auth } from "./Auth/auth.js"
+import { TODOS_V } from "../composables/Links/links";
+import { USERS } from "../composables/Links/links";
+import { AUTH } from "../composables/Links/links"
 
-let email = "test@gmail.com"
-let encoded = btoa(email)
-let decoded = atob(encoded)
+
+let email = "test@gmail.com";
+let encoded = btoa(email);
+let decoded = atob(encoded);
 console.log(encoded, decoded);
-
 
 const store = createStore({
   state() {
     return {
-      user: null,
+      users: null,
     };
   },
   mutations: {
-    increment: (state, payload) => (state.user = payload),
+    setUsers: (state, payload) => (state.users = payload),
   },
   actions: {
-    async getAllUsers() {
+    async getAllUsers(context) {
       try {
-        const res = await axios.get("users");
+        const res = await axios.get(USERS);
+        context.commit("setUsers", res.data)
         console.log(res.data);
       } catch (e) {
         console.log(e.message);
@@ -29,9 +34,11 @@ const store = createStore({
   },
   modules: {
     todos: todos,
+    auth: auth
   },
 });
 
-store.dispatch("todos/getTodos");
+store.dispatch(AUTH)
+store.dispatch(TODOS_V);
 
 export default store;
