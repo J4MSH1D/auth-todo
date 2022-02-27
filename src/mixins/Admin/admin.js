@@ -1,6 +1,6 @@
 import axios from "axios";
-import { TODOS } from "../../composables/Links/links.js";
-import { TODOS_V } from "../../composables/Links/links"
+import { TODOS, TODOS_V } from "../../composables/Links/links";
+import Navbar from "../../components/Navbar.vue"
 export const admin = {
   data() {
     return {
@@ -8,6 +8,9 @@ export const admin = {
       text: "",
       error: false,
     };
+  },
+  components: {
+    Navbar
   },
   methods: {
     async submit() {

@@ -1,4 +1,5 @@
 <template>
+<Navbar/>
   <div class="admin__Fields">
     <div class="admin__Fileds__Title">Admin</div>
     <div class="admin__Fileds__Title__label">

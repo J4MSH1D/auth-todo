@@ -103,10 +103,10 @@ a {
 .admin {
   margin-top: 40px;
   width: 100vw;
-  height: 100vh;
+  min-height: 50vh;
   .admin__Fields {
     width: 90vw;
-    margin: 100px auto 0 auto;
+    margin: 100px auto 50px auto;
     padding: 10px 0;
     border: 3px dashed #000;
     button {
@@ -178,7 +178,7 @@ a {
 }
 .todo {
   width: 100vw;
-  margin-top: 100px;
+  margin: 100px 0 50px 0;
   min-height:50vh;
   color: #000;
   .todo__Container {

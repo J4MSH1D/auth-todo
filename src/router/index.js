@@ -51,7 +51,7 @@ router.beforeEach( async(to) => {
   await getUser()
   if(to.name === "Todo" && !Boolean(user)) {
     return { name: "Auth"} 
-  }else if(to.name === "Auth" && Boolean(user)) {
+  } else if(to.name === "Auth" && Boolean(user)) {
     return { name: "Home"} 
   } else if(to.name === "Admin" && !user.admin) {
     return { name: "Home"}
