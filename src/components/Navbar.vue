@@ -1,60 +1,57 @@
 <template>
   <div class="navbar">
-    <div class="navbar__Logo">Navbar</div>
-    <div class="navbar__Links">
-      <router-link to="/">Home</router-link>
-      <router-link to="/admin" v-if="admin">Admin</router-link>
-      <button @click="redirectToAuth"  v-if="!email">Login/Register</button>
-      <div v-if="email">Hello, {{ email }}</div>
-      <button class="navbar__Links__Logout" @click="logout" v-if="email">Log out</button>
+    <div class="navbar__Container">
+      <div class="navbar__Logo">Navbar</div>
+      <div class="navbar__Links">
+        <router-link to="/">Home</router-link>
+        <router-link to="/admin" v-if="admin">Admin</router-link>
+        <button @click="redirectToAuth" v-if="!user">Login/Register</button>
+        <div v-if="user">Hello, {{ user.email }}</div>
+        <button class="navbar__Links__Logout" @click="logout" v-if="user">
+          Log out
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { AUTH } from "../composables/Links/links";
-export default {
-  name: "Navbar",
-  data(){
-    return {
-      email: null,
-      admin: null
-    }
-  },
-  created() {
-    this.getUser();
-  },
-  updated(){
-    this.getUser();
-  },
-  methods: {
-    async getUser() {
-      try {
-        await this.$store.dispatch(AUTH);
-        this.email = this.$store.state.auth.user.email;
-        this.admin = this.$store.state.auth.user.admin;
-      } catch (e) {
-        console.log(e.message);
-      }
+  export default {
+    name: "Navbar",
+    data() {
+      return {
+        admin: null,
+      };
     },
-    async logout(){
-      try {
-        localStorage.removeItem("jwt");
-        await this.getUser()
-        this.email = this.admin = null
-        this.$router.push({name: "Auth"})
-      } catch (e) {
-        console.log(e.message);
-      }
+    methods: {
+      async logout() {
+        try {
+          localStorage.removeItem("jwt");
+          this.admin = null;
+          this.$router.push({ name: "Auth" });
+        } catch (e) {
+          console.log(e.message);
+        }
+      },
+      redirectToAuth() {
+        this.$router.push({ name: "Auth" });
+      },
     },
-    redirectToAuth(){
-      this.$router.push({name: "Auth"})
-    }
-  },
-  beforeUnmount(){
-    this.getUser()
-  }
-};
+    computed: {
+      user() {
+        return this.$store.state.auth.user;
+      },
+    },
+    watch: {
+      user() {
+        if (this.user && this.user.admin) {
+          this.admin = true;
+        } else {
+          return null;
+        }
+      },
+    },
+  };
 </script>
 
 <style></style>

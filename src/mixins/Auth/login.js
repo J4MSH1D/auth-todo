@@ -16,7 +16,6 @@ export const loginForm = {
         this.error = false;
         try {
           const id = this.email
-          console.log(id);
           const res = await axios.get(USERS+`/${id}`);
           if (res.data.password === this.password) {
             const encoded = btoa(this.email);

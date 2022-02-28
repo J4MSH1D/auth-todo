@@ -15,7 +15,7 @@
           <label for="password">Password</label>
         </div>
         <div>
-          <input type="password" v-model="password" id="password"/>
+          <input type="password" v-model="password" id="password" @keydown.enter="login"/>
         </div>
       </div>
       <div class="error" v-if="error">Your data is invalid</div>

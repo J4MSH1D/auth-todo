@@ -23,7 +23,7 @@
           <label for="password1">Confirm Password</label>
         </div>
         <div>
-          <input type="password" v-model="cPassword" id="password1" />
+          <input type="password" v-model="cPassword" id="password1" @keydown.enter="register"/>
         </div>
       </div>
       <div class="error" v-if="error">Your data is invalid</div>

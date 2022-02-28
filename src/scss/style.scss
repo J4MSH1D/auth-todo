@@ -25,12 +25,17 @@ a {
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  .navbar__Container {
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .navbar__Logo {
     font-size: 20px;
     font-weight: 500;
-    width: 20%;
-    text-align: right;
   }
   .navbar__Links {
     @include flex-end;
