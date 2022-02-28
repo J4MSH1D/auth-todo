@@ -11,5 +11,6 @@ npm run dev
 ```
 
 ### How to run JSON-SERVER
+```
 npx json-server --watch -p 3333 db.json
 ```
