@@ -5,8 +5,8 @@
       <div class="navbar__Links">
         <router-link to="/">Home</router-link>
         <router-link to="/admin" v-if="admin">Admin</router-link>
-        <button @click="redirectToAuth" v-if="!user">Login/Register</button>
-        <div v-if="user">Hello, {{ user.email }}</div>
+        <button @click="redirectToAuth" v-if="!user">Login / Register</button>
+        <div v-if="user" class="navbar__container__username">Hello, <span>{{ user.email }}</span></div>
         <button class="navbar__Links__Logout" @click="logout" v-if="user">
           Log out
         </button>

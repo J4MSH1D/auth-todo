@@ -14,12 +14,12 @@ export const admin = {
         this.error = true;
       } else {
         try {
+          this.error = false;
           const data = {
             title: this.title,
             text: this.text,
           };
           await axios.post(TODOS, data);
-          await this.$store.dispatch(TODOS_V)
           this.title = this.text = "";
         } catch (e) {
           console.log(e.message);
@@ -27,4 +27,11 @@ export const admin = {
       }
     },
   },
+  async beforeUnmount(){
+    try {
+      await this.$store.dispatch(TODOS_V)
+    } catch (e) {
+      console.log(e.message);
+    }
+  }
 };
