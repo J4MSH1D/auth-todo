@@ -27,6 +27,11 @@ const routes = [
     path: "/:title/:text/:id/todo-changer",
     name: "Todo Changer",
     component: () => import("../views/TodoChanger.vue")
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "Not Found",
+    component: () => import("../views/404.vue")
   }
 ];
 
