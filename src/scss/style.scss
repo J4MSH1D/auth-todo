@@ -217,11 +217,15 @@ a {
 }
 .navbar__container__username {
   background-color: #fff;
-  padding: 2px 15px;
+  padding: 0 15px;
   margin-right: 5px;
   color: #000;
-  span {
-    font-weight: 700;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #000;
+    color: #fff;
   }
 }
 .router-link-exact-active {
