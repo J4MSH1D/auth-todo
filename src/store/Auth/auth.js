@@ -1,5 +1,5 @@
 import axios from "axios";
-import { USERS } from "../../composables/Links/links";
+import { USER } from "../../composables/Links/links";
 export const auth = {
   namespaced: true,
   state() {
@@ -14,7 +14,7 @@ export const auth = {
     async getUser(context) {
       try {
         const id = atob(localStorage.jwt);
-        const res = await axios.get(USERS + `/${id}`);
+        const res = await axios.get(USER(id));
         context.commit("setUser", res.data);
       } catch {
         context.commit("setUser", null);

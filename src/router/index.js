@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import store from "../store/"
-import { AUTH } from "../composables/Links/links"
+import store from "../store/";
+import { AUTH } from "../composables/Links/links";
 
 const routes = [
   {
@@ -29,34 +29,32 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior() {
-    return { top: 0};
+    return { top: 0 };
   },
 });
 
-
 // Navigation Guard
 
-let user = null
+let user = null;
 
-async function getUser(){
+async function getUser() {
   try {
-      await store.dispatch(AUTH)
-      user = store.state.auth.user
+    await store.dispatch(AUTH);
+    user = store.state.auth.user;
   } catch {
-    user = null
+    user = null;
   }
 }
 
-router.beforeEach( async(to) => {
-  await getUser()
-  if(to.name === "Todo" && !Boolean(user)) {
-    return { name: "Auth"} 
-  } else if(to.name === "Auth" && Boolean(user)) {
-    return { name: "Home"} 
-  } else if(to.name === "Admin" && !user.admin) {
-    return { name: "Home"}
+router.beforeEach(async (to) => {
+  await getUser();
+  if (to.name === "Todo" && !Boolean(user)) {
+    return { name: "Auth" };
+  } else if (to.name === "Auth" && Boolean(user)) {
+    return { name: "Home" };
+  } else if (to.name === "Admin" && !user.admin) {
+    return { name: "Home" };
   }
-})
-
+});
 
 export default router;
