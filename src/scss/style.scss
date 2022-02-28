@@ -415,6 +415,43 @@ a {
     }
   }
 }
+.listOfUsers {
+  width: 90%;
+  margin: 100px auto 0 auto;
+  @include flex-center-start;
+  & > div {
+    width: 300px;
+    margin: 0 50px;
+    padding: 15px 0;
+    border: 3px dashed #000;
+    text-align: center;
+  }
+  .listOfUsers__blocks__Title {
+    text-align: center;
+    font-size: 25px;
+    width: 80%;
+    margin: 0 auto 20px auto;
+    border-bottom: 2px dashed #000;
+  }
+  .listOfUsers__blocks {
+    @include flex-column-center;
+    input {
+      width: 20px;
+      height: 20px;
+      accent-color: #000;
+      cursor: pointer;
+    }
+    label {
+      cursor: pointer;
+    }
+  }
+  .listOfUsers__blocks__userData {
+    margin: 10px 0;
+    font-size: 19px;
+    @include flex-space-between;
+    width: 80%;
+  }
+}
 .notFound {
   width: 100vw;
   height: 100vh;

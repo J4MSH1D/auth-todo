@@ -21,12 +21,14 @@
       </div>
       <div v-if="empty">There no todos yet</div>
     </div>
+    <ListOfUser v-if="forms.users" />
   </div>
 </template>
 
 <script>
   import AdminField from "../components/AdminFileds.vue";
   import Loading from "../components/Loading.vue";
+  import ListOfUser from "../components/ListOfUsers.vue"
   import { TODO, TODOS_V } from "../composables/Links/links";
   import axios from "axios";
   export default {
@@ -45,6 +47,7 @@
     components: {
       AdminField,
       Loading,
+      ListOfUser
     },
     created() {
       this.updates();

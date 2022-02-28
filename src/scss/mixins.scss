@@ -10,10 +10,22 @@
   justify-content: flex-end;
   flex-wrap: wrap;
 }
+@mixin flex-center-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
 @mixin flex-space-around {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+@mixin flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 @mixin flex-column-center {

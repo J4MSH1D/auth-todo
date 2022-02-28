@@ -20,18 +20,21 @@ const store = createStore({
       try {
         const res = await axios.get(USERS);
         context.commit("setUsers", res.data);
-        console.log(res.data);
       } catch (e) {
         console.log(e.message);
       }
     },
+  },
+  getters: {
+    admins: (state) =>state.users.filter((user)=> user.admin === true),
+    custom: (state) => state.users.filter((user) => user.admin === false)
   },
   modules: {
     todos: todos,
     auth: auth,
   },
 });
-
+store.dispatch("getAllUsers")
 store.dispatch(AUTH);
 store.dispatch(TODOS_V);
 
