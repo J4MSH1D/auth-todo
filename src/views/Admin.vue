@@ -1,4 +1,5 @@
 <template>
+  <Loading v-if="loading" />
   <div class="admin">
     <div class="buttonFields">
       <button class="buttonFields__buttons__active">Add Post</button>
@@ -16,7 +17,7 @@
         <button @click="redirectToChange(todo.title, todo.text, todo.id)">
           Edit
         </button>
-        <button class="delete-btn">Delete</button>
+        <button class="delete-btn" @click="deletePost(todo.id)">Delete</button>
       </div>
       <div v-if="empty">There no todos yet</div>
     </div>
@@ -25,6 +26,9 @@
 
 <script>
   import AdminField from "../components/AdminFileds.vue";
+  import Loading from "../components/Loading.vue";
+  import { TODO, TODOS_V } from "../composables/Links/links";
+  import axios from "axios";
   export default {
     name: "Admin",
     data() {
@@ -35,10 +39,12 @@
           users: false,
         },
         empty: true,
+        loading: false,
       };
     },
     components: {
       AdminField,
+      Loading,
     },
     created() {
       this.updates();
@@ -85,6 +91,17 @@
             id: id,
           },
         });
+      },
+      async deletePost(id) {
+        this.loading = true;
+        try {
+          await axios.delete(TODO(id));
+          this.$store.dispatch(TODOS_V);
+          this.loading = false;
+        } catch (e) {
+          this.loading = false;
+          console.log(e.message);
+        }
       },
     },
     watch: {
