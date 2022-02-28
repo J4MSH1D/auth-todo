@@ -62,7 +62,7 @@ router.beforeEach(async (to) => {
     return { name: "Auth" };
   } else if (to.name === "Auth" && Boolean(user)) {
     return { name: "Home" };
-  } else if (to.name === "Admin" && !user.admin) {
+  } else if ((to.name === "Admin" || to.path === "Admin") && (!Boolean(user) || !user.admin)) {
     return { name: "Home" };
   } else if(to.name === "Todo Changer" && !user.admin) {
     return { name: "Home" }
