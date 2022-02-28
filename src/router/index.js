@@ -23,6 +23,11 @@ const routes = [
     name: "Todo",
     component: () => import("../views/Todo.vue"),
   },
+  {
+    path: "/:title/:text/:id/todo-changer",
+    name: "Todo Changer",
+    component: () => import("../views/TodoChanger.vue")
+  }
 ];
 
 const router = createRouter({
@@ -54,6 +59,8 @@ router.beforeEach(async (to) => {
     return { name: "Home" };
   } else if (to.name === "Admin" && !user.admin) {
     return { name: "Home" };
+  } else if(to.name === "Todo Changer" && !user.admin) {
+    return { name: "Home" }
   }
 });
 

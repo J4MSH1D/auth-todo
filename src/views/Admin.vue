@@ -13,7 +13,10 @@
         <div class="todos_list_for_admin__text">
           {{ todo.text }}
         </div>
-        <button>Edit</button> <button class="delete-btn">Delete</button>
+        <button @click="redirectToChange(todo.title, todo.text, todo.id)">
+          Edit
+        </button>
+        <button class="delete-btn">Delete</button>
       </div>
       <div v-if="empty">There no todos yet</div>
     </div>
@@ -31,17 +34,17 @@
           posts: false,
           users: false,
         },
-        empty: true
+        empty: true,
       };
     },
     components: {
       AdminField,
     },
-    created(){
-      this.updates()
+    created() {
+      this.updates();
     },
-    updated(){
-      this.updates()
+    updated() {
+      this.updates();
     },
     mounted() {
       const selectAll = (item) => document.querySelectorAll(item);
@@ -61,27 +64,37 @@
       });
     },
     computed: {
-      todos(){
-        return this.$store.state.todos.todos
-      }
+      todos() {
+        return this.$store.state.todos.todos;
+      },
     },
     methods: {
       updates() {
-        if(this.todos.length > 0) {
-          this.empty = false
+        if (this.todos.length > 0) {
+          this.empty = false;
         } else {
-          this.empty = true
+          this.empty = true;
         }
-      }
+      },
+      redirectToChange(title, text, id) {
+        this.$router.push({
+          name: "Todo Changer",
+          params: {
+            title: title,
+            text: text,
+            id: id,
+          },
+        });
+      },
     },
-    watch:{
-      todos(){
-        if(this.todos.length > 0) {
-          this.empty = false
+    watch: {
+      todos() {
+        if (this.todos.length > 0) {
+          this.empty = false;
         } else {
-          this.empty = true
+          this.empty = true;
         }
-      }
-    }
+      },
+    },
   };
 </script>

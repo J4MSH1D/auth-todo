@@ -26,6 +26,9 @@ export const admin = {
         }
       }
     },
+    clear(){
+      this.title = this.text = ""
+    }
   },
   async beforeUnmount(){
     try {

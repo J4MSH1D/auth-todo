@@ -12,8 +12,8 @@
       </div>
     </div>
     <div class="error" v-if="error">Your data is incorrect</div>
-    <div>
-      <button @click="submit">Submit</button>
+    <div class="admin__Fields__button">
+      <button @click="submit" class="submit">Submit</button> <button class="clear" @click="clear">Clear</button>
     </div>
   </div>
 </template>
