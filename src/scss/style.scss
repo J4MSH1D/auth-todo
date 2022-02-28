@@ -19,6 +19,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9;
   padding: 5px 0;
   width: 100vw;
   background-color: #111;
@@ -463,5 +464,36 @@ a {
   font-size: 45pt;
   button {
     @include button;
+  }
+}
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  @include flex-center;
+  & > div {
+    position: relative;
+    z-index: 555;
+    color: #fff;
+    font-size: 50pt;
+  }
+  &::after {
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: #000;
+    opacity: .3;
+  }
+  img {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
   }
 }
