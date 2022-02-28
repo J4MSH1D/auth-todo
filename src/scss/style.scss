@@ -335,20 +335,20 @@ a {
     position: relative;
     width: 80px;
     height: 80px;
-  }
-  .lds-roller div {
-    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    transform-origin: 40px 40px;
-  }
-  .lds-roller div:after {
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #000;
-    margin: -4px 0 0 -4px;
+    & div {
+      animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      transform-origin: 40px 40px;
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #000;
+        margin: -4px 0 0 -4px;
+      }
+    }
   }
   .lds-roller div:nth-child(1) {
     animation-delay: -0.036s;
@@ -418,7 +418,7 @@ a {
 .notFound {
   width: 100vw;
   height: 100vh;
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: #fff;

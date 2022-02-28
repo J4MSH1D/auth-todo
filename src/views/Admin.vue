@@ -96,7 +96,7 @@
         this.loading = true;
         try {
           await axios.delete(TODO(id));
-          this.$store.dispatch(TODOS_V);
+          await this.$store.dispatch(TODOS_V);
           this.loading = false;
         } catch (e) {
           this.loading = false;
