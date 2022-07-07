@@ -10,13 +10,13 @@
       "id": "test@gmail.com",
       "email": "test@gmail.com",
       "password": "123123123",
-      "admin": true
+      "admin": false
     },
     {
       "id": "test50@gmail.com",
       "email": "test50@gmail.com",
       "password": "asdasdasd",
-      "admin": true
+      "admin": false
     },
     {
       "id": "test5@gmail.com",
@@ -40,7 +40,7 @@
       "id": "test110@gmail.com",
       "email": "test110@gmail.com",
       "password": "1234567",
-      "admin": true
+      "admin": false
     },
     {
       "id": "test11@gmail.com",
